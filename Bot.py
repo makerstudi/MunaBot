@@ -2,6 +2,7 @@ import discord, asyncio, datetime, pytz
 import openpyxl
 from captcha.image import ImageCaptcha
 import random
+import os
 
 client = discord.Client()
 
@@ -451,4 +452,5 @@ async def on_message(message):
         await message.channel.send(file=file)
         await message.channel.send("장애인라이더")
 # 봇을 실행시키기 위한 토큰을 작성해주는 곳
-client.run('OTcxNjM5Nzk4MTk4NTY2OTMz.Gl0LR_.kWYTrpINlqSIQsIvagwvndEBtQJKXD_67LXcSo')
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
